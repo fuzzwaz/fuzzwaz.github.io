@@ -8,51 +8,47 @@ const CONTENT = {
   // ── HERO ────────────────────────────────────────────────────
   hero: {
     name:    "Ramy Fawaz",
-    bio:     "Senior Technical Designer at High Moon Studios, crafting systems and experiences for the Call of Duty franchise.",
-  },
-
-  // ── ABOUT ───────────────────────────────────────────────────
-  about: {
-    // Each string in this array becomes one paragraph
-    paragraphs: [
-      "I'm a technical designer passionate about building the systems and mechanics that make games feel alive. Currently at **High Moon Studios**, I contribute to the Call of Duty franchise — most recently shipping Modern Warfare III, where I created the content engine powering all world activities in Modern Warfare Zombies, an online multiplayer open-world extraction shooter.",
-      "Before game development, I worked at **TechSmith** as both a Software Engineer and Product Owner on Snagit, where I developed features and helped define product roadmaps.",
-      "Here are a few areas I work across:",
-    ],
-    skills: [
-      "Engine Programming",
-      "Game Systems Design",
-      "3D Modeling",
-      "Gameplay Analysis",
-      "Team Collaboration",
-      "C++ / Unreal Engine",
-    ],
+    bio:     "Senior Technical Designer and former Senior Gameplay Engineer at High Moon Studios.",
   },
 
   // ── EXPERIENCE ──────────────────────────────────────────────
-  // Add a new job by copying one of the blocks below and filling it in
+  // Each entry is a shipped game. Copy a block to add a new one.
   experience: [
     {
-      title:    "Senior Technical Designer",
-      company:  "High Moon Studios",
-      location: "Carlsbad, CA",
-      period:   "2022 – Present",
+      game:    "Call of Duty: Black Ops 7",
+      image:   "images/bo7-keyart.jpg",
+      company: "High Moon Studios",
+      role:    "Senior Technical Designer",
+      year:    "2025",
       bullets: [
-        "Shipped **Call of Duty: Modern Warfare III** (2023) — built the content engine powering all world activities in Modern Warfare Zombies, an open-world extraction shooter.",
-        "Contributed to **Call of Duty: Modern Warfare II** (2022).",
+        "Add a key highlight here.",
+        "Add another highlight here.",
       ],
-      tags: ["C++", "Unreal Engine", "Technical Design", "Open World"],
+      tags: ["Technical Design"],
     },
     {
-      title:    "Software Engineer & Product Owner",
-      company:  "TechSmith",
-      location: "East Lansing, MI",
-      period:   "Prior to 2022",
+      game:    "Call of Duty: Black Ops 6",
+      image:   "images/bo6-keyart.jpg",
+      company: "High Moon Studios",
+      role:    "Senior Technical Designer",
+      year:    "2024",
       bullets: [
-        "Developed features for **Snagit**, a widely-used screen capture and recording application.",
-        "Defined product roadmaps and collaborated cross-functionally as Product Owner.",
+        "Add a key highlight here.",
+        "Add another highlight here.",
       ],
-      tags: ["C#", "Product Management", "Software Engineering"],
+      tags: ["Technical Design"],
+    },
+    {
+      game:    "Call of Duty: Modern Warfare III",
+      image:   "images/mw3-keyart.jpg",
+      company: "High Moon Studios",
+      role:    "Senior Gameplay Engineer",
+      year:    "2023",
+      bullets: [
+        "Built the content engine powering all world activities in **Modern Warfare Zombies**, an online multiplayer open-world extraction shooter.",
+        "Add another highlight here.",
+      ],
+      tags: ["Gameplay Engineering", "Open World", "Systems"],
     },
   ],
 

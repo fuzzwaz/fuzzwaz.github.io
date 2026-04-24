@@ -14,29 +14,30 @@ function renderContent() {
   document.getElementById('hero-name').textContent = c.hero.name;
   document.getElementById('hero-bio').textContent  = c.hero.bio;
 
-  // ── About ─────────────────────────────────────────────────
-  document.getElementById('about-paragraphs').innerHTML =
-    c.about.paragraphs.map(p => `<p>${bold(p)}</p>`).join('');
-
-  document.getElementById('about-skills').innerHTML =
-    c.about.skills.map(s => `<li>${s}</li>`).join('');
-
   // ── Experience ────────────────────────────────────────────
   document.getElementById('experience-list').innerHTML =
     c.experience.map(job => `
       <div class="experience-card">
-        <div class="exp-header">
-          <div>
-            <h3 class="exp-title">${job.title}</h3>
-            <p class="exp-company">${job.company} <span class="exp-location">— ${job.location}</span></p>
-          </div>
-          <span class="exp-date">${job.period}</span>
+        <div class="exp-keyart">
+          ${job.image
+            ? `<img src="${job.image}" alt="${job.game} key art" />`
+            : `<div class="exp-keyart-placeholder"><span>${job.game}</span></div>`
+          }
         </div>
-        <ul class="exp-details">
-          ${job.bullets.map(b => `<li>${bold(b)}</li>`).join('')}
-        </ul>
-        <div class="exp-tags">
-          ${job.tags.map(t => `<span>${t}</span>`).join('')}
+        <div class="exp-body">
+          <div class="exp-header">
+            <div>
+              <h3 class="exp-game">${job.game}</h3>
+              <p class="exp-role">${job.role} <span class="exp-company">· ${job.company}</span></p>
+            </div>
+            <span class="exp-date">${job.year}</span>
+          </div>
+          <ul class="exp-details">
+            ${job.bullets.map(b => `<li>${bold(b)}</li>`).join('')}
+          </ul>
+          <div class="exp-tags">
+            ${job.tags.map(t => `<span>${t}</span>`).join('')}
+          </div>
         </div>
       </div>
     `).join('');
