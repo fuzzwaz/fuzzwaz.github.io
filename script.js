@@ -1,11 +1,78 @@
-// Navbar: add shadow/border on scroll
+// Converts **text** to <strong>text</strong>
+function bold(str) {
+  return str.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+}
+
+function renderContent() {
+  const c = CONTENT;
+
+  // ── Hero ──────────────────────────────────────────────────
+  const heroIntro   = document.getElementById('hero-intro');
+  const heroTagline = document.getElementById('hero-tagline');
+  if (heroIntro)   heroIntro.remove();
+  if (heroTagline) heroTagline.remove();
+  document.getElementById('hero-name').textContent = c.hero.name;
+  document.getElementById('hero-bio').textContent  = c.hero.bio;
+
+  // ── About ─────────────────────────────────────────────────
+  document.getElementById('about-paragraphs').innerHTML =
+    c.about.paragraphs.map(p => `<p>${bold(p)}</p>`).join('');
+
+  document.getElementById('about-skills').innerHTML =
+    c.about.skills.map(s => `<li>${s}</li>`).join('');
+
+  // ── Experience ────────────────────────────────────────────
+  document.getElementById('experience-list').innerHTML =
+    c.experience.map(job => `
+      <div class="experience-card">
+        <div class="exp-header">
+          <div>
+            <h3 class="exp-title">${job.title}</h3>
+            <p class="exp-company">${job.company} <span class="exp-location">— ${job.location}</span></p>
+          </div>
+          <span class="exp-date">${job.period}</span>
+        </div>
+        <ul class="exp-details">
+          ${job.bullets.map(b => `<li>${bold(b)}</li>`).join('')}
+        </ul>
+        <div class="exp-tags">
+          ${job.tags.map(t => `<span>${t}</span>`).join('')}
+        </div>
+      </div>
+    `).join('');
+
+  // ── Projects ──────────────────────────────────────────────
+  document.getElementById('projects-grid').innerHTML =
+    c.projects.map(p => `
+      <div class="project-card">
+        <div class="project-top">
+          <span class="project-icon">⬡</span>
+        </div>
+        <h3 class="project-title">${p.title}</h3>
+        <p class="project-desc">${p.desc}</p>
+        <div class="project-tags">
+          ${p.tags.map(t => `<span>${t}</span>`).join('')}
+        </div>
+        <a href="${p.page}" class="project-link">View project →</a>
+      </div>
+    `).join('');
+
+  // ── Contact & nav links ───────────────────────────────────
+  document.getElementById('contact-email').href        = `mailto:${c.links.email}`;
+  document.getElementById('contact-linkedin').href     = c.links.linkedin;
+  document.getElementById('contact-youtube').href      = c.links.youtube;
+  document.getElementById('contact-resume').href       = c.links.resume;
+  document.getElementById('nav-resume').href           = c.links.resume;
+}
+
+// ── Navbar scroll effect ──────────────────────────────────
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 20);
 }, { passive: true });
 
-// Mobile nav toggle
-const toggle = document.querySelector('.nav-toggle');
+// ── Mobile nav toggle ─────────────────────────────────────
+const toggle   = document.querySelector('.nav-toggle');
 const navLinks = document.querySelector('.nav-links');
 
 toggle.addEventListener('click', () => {
@@ -13,10 +80,12 @@ toggle.addEventListener('click', () => {
   toggle.setAttribute('aria-expanded', isOpen);
 });
 
-// Close mobile nav when a link is clicked
 navLinks.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => {
     navLinks.classList.remove('open');
     toggle.setAttribute('aria-expanded', 'false');
   });
 });
+
+// ── Run ───────────────────────────────────────────────────
+renderContent();
