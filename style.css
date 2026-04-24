@@ -181,6 +181,7 @@ ul { list-style: none; }
   border: 1px solid var(--border);
   box-shadow: 0 0 60px rgba(100, 255, 218, 0.04);
   background: var(--bg-card);
+  min-width: 0;
 }
 
 .hero-video-wrap video {
@@ -824,10 +825,6 @@ footer p {
   .hero-inner {
     grid-template-columns: 1fr;
     gap: 2rem;
-  }
-
-  .hero-video-wrap {
-    order: -1;
   }
 
   #hero {
