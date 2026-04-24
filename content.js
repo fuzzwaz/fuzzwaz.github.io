@@ -30,7 +30,7 @@ const CONTENT = {
       game:    "Call of Duty: Black Ops 6",
       image:   "images/bo6-keyart.jpg",
       company: "High Moon Studios",
-      role:    "Senior Technical Designer",
+      role:    "Senior Technical Designer / Senior Gameplay Engineer",
       year:    "2024",
       bullets: [
         "Add a key highlight here.",
