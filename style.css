@@ -186,7 +186,15 @@ ul { list-style: none; }
   overflow: hidden;
   position: relative;
   min-width: 0;
-  margin-left: -2.5rem;
+  margin-left: -4.5rem;
+  /* L1: solid fill — restores full clean video beyond the dot zone
+     L2: dot pattern
+     L3: opacity envelope — controls how opaque the dots are across the edge
+     L2 intersect L3 = dots that fade in opacity; L1 added on top = full video beyond */
+  /* L1: solid fill — restores full clean video beyond the dot zone
+     L2: dot pattern
+     L3: opacity envelope — controls how opaque the dots are across the edge
+     L2 intersect L3 = dots that fade in opacity; L1 added on top = full video beyond */
   /* L1: solid fill — restores full clean video beyond the dot zone
      L2: dot pattern
      L3: opacity envelope — controls how opaque the dots are across the edge
