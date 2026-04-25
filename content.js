@@ -30,13 +30,13 @@ const CONTENT = {
       game:    "Call of Duty: Black Ops 6",
       image:   "images/bo6-keyart.jpg",
       company: "High Moon Studios",
-      role:    "Senior Technical Designer / Senior Gameplay Engineer",
+      role:    "Senior Gameplay Engineer / Technical Designer",
       year:    "2024",
       bullets: [
         "Add a key highlight here.",
         "Add another highlight here.",
       ],
-      tags: ["Technical Design"],
+      tags: ["Gameplay Engineering" , "Technical Design"],
     },
     {
       game:    "Call of Duty: Modern Warfare III",
@@ -49,6 +49,18 @@ const CONTENT = {
         "Add another highlight here.",
       ],
       tags: ["Gameplay Engineering", "Open World", "Systems"],
+    },
+    {
+      game:    "Call of Duty: Modern Warfare II",
+      image:   "images/mw2-keyart.jpg",
+      company: "High Moon Studios",
+      role:    "Gameplay Engineer",
+      year:    "2022",
+      bullets: [
+        "Add a key highlight here.",
+        "Add another highlight here.",
+      ],
+      tags: ["Gameplay Engineering"],
     },
   ],
 
