@@ -70,38 +70,30 @@ const CONTENT = {
     {
       title: "Fuzzy2D & Particle Shooter",
       desc:  "Built a custom C++ 2D game engine from scratch, then used it to create a classic shoot-'em-up with particle effects.",
+      image: "images/particle_shooter-keyart.png",   
       tags:  ["C++", "Custom Engine", "2D"],
       page:  "projects/fuzzy2d.html",
     },
     {
       title: "Rift Shot",
       desc:  "A first-person shooter with an emphasis on game design fundamentals and original 3D modeling.",
+      image: "images/rift_shot-keyart.png",
       tags:  ["FPS", "3D Modeling", "Game Design"],
       page:  "projects/rift-shot.html",
     },
     {
       title: "A Link to the Past Dungeon",
       desc:  "A custom-designed dungeon in the style of The Legend of Zelda: A Link to the Past, complete with puzzles, items, and enemies.",
+      image: "images/zelda-keyart.png",
       tags:  ["Level Design", "Puzzle Design", "Zelda-style"],
       page:  "projects/link-to-the-past.html",
     },
     {
       title: "Natural Perfection",
       desc:  "A 4-player local multiplayer shooter designed for couch play.",
+      image: "images/natural_perfection-keyart.png",
       tags:  ["Multiplayer", "Local Co-op", "Shooter"],
       page:  "projects/natural-perfection.html",
-    },
-    {
-      title: "Friends 'til the End",
-      desc:  "A split-screen battle royale featuring hunting and fishing mechanics layered on top of a core survival loop.",
-      tags:  ["Battle Royale", "Split-screen", "Survival"],
-      page:  "projects/friends-til-the-end.html",
-    },
-    {
-      title: "Advanced Directed Study",
-      desc:  "A curated collection of Unreal Engine demonstrations built during an advanced independent study.",
-      tags:  ["Unreal Engine", "Prototyping", "Systems"],
-      page:  "projects/advanced-directed-study.html",
     },
   ],
 

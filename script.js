@@ -56,17 +56,20 @@ function renderContent() {
   // ── Projects ──────────────────────────────────────────────
   document.getElementById('projects-grid').innerHTML =
     c.projects.map(p => `
-      <div class="project-card">
-        <div class="project-top">
-          <span class="project-icon">⬡</span>
-        </div>
+      <a class="project-card" href="${p.page}">
         <h3 class="project-title">${p.title}</h3>
         <p class="project-desc">${p.desc}</p>
+        <div class="project-card-image">
+          ${p.image
+            ? `<img src="${p.image}" alt="${p.title}" />`
+            : ``
+          }
+        </div>
         <div class="project-tags">
           ${p.tags.map(t => `<span>${t}</span>`).join('')}
         </div>
-        <a href="${p.page}" class="project-link">View project →</a>
-      </div>
+        <span class="project-link">View project →</span>
+      </a>
     `).join('');
 
   // ── Contact & nav links ───────────────────────────────────
