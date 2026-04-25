@@ -125,18 +125,23 @@ ul { list-style: none; }
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: calc(var(--nav-h) + 3rem) 2rem 5rem;
+  padding: calc(var(--nav-h) + 3rem) 0 5rem;
   background: var(--bg);
+  overflow: hidden;
 }
 
 .hero-inner {
-  max-width: 1200px;
-  margin: 0 auto;
+  padding-left: max(2rem, calc(50vw - 600px));
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 3.5rem;
   align-items: center;
+}
+
+.hero-text {
+  position: relative;
+  z-index: 1;
 }
 
 .hero-intro {
@@ -178,12 +183,25 @@ ul { list-style: none; }
 
 /* Video panel */
 .hero-video-wrap {
-  border-radius: 10px;
   overflow: hidden;
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
-  background: var(--bg-card);
+  position: relative;
   min-width: 0;
+  margin-left: -2.5rem;
+}
+
+.hero-video-wrap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    var(--bg)              0%,
+    rgba(10, 10, 15, 0.75) 20%,
+    rgba(10, 10, 15, 0.35) 40%,
+    transparent            58%
+  );
+  z-index: 1;
+  pointer-events: none;
 }
 
 .hero-video-wrap video {
@@ -830,6 +848,12 @@ footer p {
   .hero-inner {
     grid-template-columns: 1fr;
     gap: 2rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .hero-video-wrap::before {
+    background: linear-gradient(to bottom, var(--bg) 0%, transparent 30%);
   }
 
   #hero {
