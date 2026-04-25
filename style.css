@@ -187,21 +187,22 @@ ul { list-style: none; }
   position: relative;
   min-width: 0;
   margin-left: -2.5rem;
-}
-
-.hero-video-wrap::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to right,
-    var(--bg)              0%,
-    rgba(10, 10, 15, 0.75) 20%,
-    rgba(10, 10, 15, 0.35) 40%,
-    transparent            58%
-  );
-  z-index: 1;
-  pointer-events: none;
+  /* L1: solid fill — restores full clean video beyond the dot zone
+     L2: dot pattern
+     L3: opacity envelope — controls how opaque the dots are across the edge
+     L2 intersect L3 = dots that fade in opacity; L1 added on top = full video beyond */
+  mask-image:
+    linear-gradient(to right, transparent 6%, black 20%),
+    radial-gradient(circle 1px at 2px 2px, black 100%, transparent 100%),
+    linear-gradient(to right, transparent 0%, black 16%);
+  mask-size: 100% 100%, 4px 4px, 100% 100%;
+  mask-composite: add, intersect, add;
+  -webkit-mask-image:
+    linear-gradient(to right, transparent 6%, black 20%),
+    radial-gradient(circle 1px at 2px 2px, black 100%, transparent 100%),
+    linear-gradient(to right, transparent 0%, black 16%);
+  -webkit-mask-size: 100% 100%, 4px 4px, 100% 100%;
+  -webkit-mask-composite: source-over, source-in, source-over;
 }
 
 .hero-video-wrap video {
@@ -852,8 +853,19 @@ footer p {
     padding-right: 1.5rem;
   }
 
-  .hero-video-wrap::before {
-    background: linear-gradient(to bottom, var(--bg) 0%, transparent 30%);
+  .hero-video-wrap {
+    mask-image:
+      linear-gradient(to bottom, transparent 6%, black 20%),
+      radial-gradient(circle 1px at 2px 2px, black 100%, transparent 100%),
+      linear-gradient(to bottom, transparent 0%, black 16%);
+    mask-size: 100% 100%, 4px 4px, 100% 100%;
+    mask-composite: add, intersect, add;
+    -webkit-mask-image:
+      linear-gradient(to bottom, transparent 6%, black 20%),
+      radial-gradient(circle 1px at 2px 2px, black 100%, transparent 100%),
+      linear-gradient(to bottom, transparent 0%, black 16%);
+    -webkit-mask-size: 100% 100%, 4px 4px, 100% 100%;
+    -webkit-mask-composite: source-over, source-in, source-over;
   }
 
   #hero {
