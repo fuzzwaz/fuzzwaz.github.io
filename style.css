@@ -329,6 +329,7 @@ section {
   box-shadow: var(--shadow);
   border-left: 4px solid transparent;
   transition: border-color var(--ease), transform var(--ease), box-shadow var(--ease);
+  cursor: pointer;
 }
 
 .experience-card:hover {
@@ -339,11 +340,15 @@ section {
 
 .exp-keyart {
   width: 180px;
+  min-height: 140px;
   flex-shrink: 0;
   overflow: hidden;
+  position: relative;
 }
 
 .exp-keyart img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -387,6 +392,7 @@ section {
   align-items: flex-start;
   gap: 1rem;
   margin-bottom: 1rem;
+  user-select: none;
 }
 
 .exp-game {
@@ -405,16 +411,63 @@ section {
   color: var(--text-muted);
 }
 
+.exp-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+
 .exp-date {
   color: var(--text-dim);
   font-size: 0.82rem;
   font-family: monospace;
   white-space: nowrap;
-  flex-shrink: 0;
   padding-top: 2px;
 }
 
+.exp-toggle {
+  background: none;
+  border: 1.5px solid var(--border);
+  color: var(--accent);
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  transition: transform 0.32s ease, background-color 0.2s;
+  line-height: 1;
+  padding: 0;
+  padding-bottom: 1px;
+  flex-shrink: 0;
+}
+
+.exp-toggle:hover {
+  background: var(--accent-dim);
+}
+
+.experience-card.expanded .exp-toggle {
+  transform: rotate(180deg);
+}
+
+.experience-card.expanded {
+  border-left-color: var(--accent);
+}
+
 .exp-details {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.38s ease, opacity 0.25s ease, margin-bottom 0.2s ease;
+  margin-bottom: 0;
+}
+
+.experience-card.expanded .exp-details {
+  max-height: 600px;
+  opacity: 1;
   margin-bottom: 1.25rem;
 }
 
@@ -763,8 +816,8 @@ footer p {
   }
 
   .exp-header {
-    flex-direction: column;
-    gap: 0.3rem;
+    flex-direction: row;
+    align-items: center;
   }
 
   section {

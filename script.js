@@ -30,7 +30,10 @@ function renderContent() {
               <h3 class="exp-game">${job.game}</h3>
               <p class="exp-role">${job.role} <span class="exp-company">· ${job.company}</span></p>
             </div>
-            <span class="exp-date">${job.year}</span>
+            <div class="exp-meta">
+              <span class="exp-date">${job.year}</span>
+              <button class="exp-toggle" aria-expanded="false" aria-label="Toggle details">▾</button>
+            </div>
           </div>
           <ul class="exp-details">
             ${job.bullets.map(b => `<li>${bold(b)}</li>`).join('')}
@@ -41,6 +44,13 @@ function renderContent() {
         </div>
       </div>
     `).join('');
+
+  document.querySelectorAll('.experience-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const expanded = card.classList.toggle('expanded');
+      card.querySelector('.exp-toggle').setAttribute('aria-expanded', expanded);
+    });
+  });
 
   // ── Projects ──────────────────────────────────────────────
   document.getElementById('projects-grid').innerHTML =
