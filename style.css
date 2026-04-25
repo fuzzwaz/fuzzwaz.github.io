@@ -862,18 +862,9 @@ footer p {
   }
 
   .hero-video-wrap {
-    mask-image:
-      linear-gradient(to bottom, transparent 6%, black 20%),
-      radial-gradient(circle 1px at 2px 2px, black 100%, transparent 100%),
-      linear-gradient(to bottom, transparent 0%, black 16%);
-    mask-size: 100% 100%, 4px 4px, 100% 100%;
-    mask-composite: add, intersect, add;
-    -webkit-mask-image:
-      linear-gradient(to bottom, transparent 6%, black 20%),
-      radial-gradient(circle 1px at 2px 2px, black 100%, transparent 100%),
-      linear-gradient(to bottom, transparent 0%, black 16%);
-    -webkit-mask-size: 100% 100%, 4px 4px, 100% 100%;
-    -webkit-mask-composite: source-over, source-in, source-over;
+    margin-left: 0;
+    mask-image: none;
+    -webkit-mask-image: none;
   }
 
   #hero {
