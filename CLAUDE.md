@@ -99,7 +99,7 @@ The **About Me section was intentionally removed.**
 ---
 
 ## Current YouTube embed (hero video)
-Video ID: `9mqdk6py-Ig` (A Link to the Past dungeon playthrough — placeholder until real game reel is ready)
+Video ID: `uKayVqsKPKI` (Ramy's portfolio highlight reel)
 
 To swap: update the video ID in the two places it appears in `index.html`.
 

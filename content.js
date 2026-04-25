@@ -19,7 +19,7 @@ const CONTENT = {
       image:   "images/bo7-keyart.jpg",
       company: "High Moon Studios",
       role:    "Senior Technical Designer",
-      year:    "2025",
+      year:    "2025 - 2026",
       bullets: [
         "Add a key highlight here.",
         "Add another highlight here.",
@@ -31,7 +31,7 @@ const CONTENT = {
       image:   "images/bo6-keyart.jpg",
       company: "High Moon Studios",
       role:    "Senior Gameplay Engineer / Technical Designer",
-      year:    "2024",
+      year:    "2024 - 2025",
       bullets: [
         "Add a key highlight here.",
         "Add another highlight here.",
@@ -43,7 +43,7 @@ const CONTENT = {
       image:   "images/mw3-keyart.jpg",
       company: "High Moon Studios",
       role:    "Senior Gameplay Engineer",
-      year:    "2023",
+      year:    "2023 - 2024",
       bullets: [
         "Built the content engine powering all world activities in **Modern Warfare Zombies**, an online multiplayer open-world extraction shooter.",
         "Add another highlight here.",
@@ -55,7 +55,7 @@ const CONTENT = {
       image:   "images/mw2-keyart.jpg",
       company: "High Moon Studios",
       role:    "Gameplay Engineer",
-      year:    "2022",
+      year:    "2022 - 2023",
       bullets: [
         "Add a key highlight here.",
         "Add another highlight here.",
