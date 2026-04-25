@@ -20,9 +20,23 @@ const CONTENT = {
       company: "High Moon Studios",
       role:    "Senior Technical Designer",
       year:    "2025 - 2026",
-      bullets: [
-        "Add a key highlight here.",
-        "Add another highlight here.",
+      sections: [
+        {
+          title: "Section Title",
+          bullets: [
+            "Add a key highlight here.",
+            "Add another highlight here.",
+          ],
+          image: null,
+        },
+        {
+          title: "Section Title",
+          bullets: [
+            "Add a key highlight here.",
+            "Add another highlight here.",
+          ],
+          image: null,
+        },
       ],
       tags: ["Technical Design"],
     },
@@ -32,11 +46,25 @@ const CONTENT = {
       company: "High Moon Studios",
       role:    "Senior Gameplay Engineer / Technical Designer",
       year:    "2024 - 2025",
-      bullets: [
-        "Add a key highlight here.",
-        "Add another highlight here.",
+      sections: [
+        {
+          title: "Section Title",
+          bullets: [
+            "Add a key highlight here.",
+            "Add another highlight here.",
+          ],
+          image: null,
+        },
+        {
+          title: "Section Title",
+          bullets: [
+            "Add a key highlight here.",
+            "Add another highlight here.",
+          ],
+          image: null,
+        },
       ],
-      tags: ["Gameplay Engineering" , "Technical Design"],
+      tags: ["Gameplay Engineering", "Technical Design"],
     },
     {
       game:    "Call of Duty: Modern Warfare III",
@@ -44,9 +72,24 @@ const CONTENT = {
       company: "High Moon Studios",
       role:    "Senior Gameplay Engineer",
       year:    "2023 - 2024",
-      bullets: [
-        "Built the content engine powering all world activities in **Modern Warfare Zombies**, an online multiplayer open-world extraction shooter.",
-        "Add another highlight here.",
+      sections: [
+        {
+          title: "MWZ / Campaign",
+          bullets: [
+            "**Modern Warfare Zombies** was a 24-player PvE open-world extraction shooter — a new direction for the franchise requiring new tooling and systems at scale.",
+            "Also contributed to campaign missions **\"Frozen Tundra\"** and **\"Trojan Horse\"**.",
+          ],
+          image: null,
+        },
+        {
+          title: "The Activity Engine",
+          bullets: [
+            "Built the **Call of Duty Activity Engine** — the content system powering every world activity in MWZ, from roaming armored convoy vehicles to quest-like **Contracts** and Warlord Fortress encounters.",
+            "Designed to be **cross-mode and cross-game compatible**, the first activity solution in the franchise built for reuse across multiple Call of Duty titles.",
+            "Selected to present the Activity Engine at the **Activision Studio Summit**, sparking franchise-wide discussions about the system's future applications.",
+          ],
+          image: "images/ramy_studio_summit.jpg",
+        },
       ],
       tags: ["Gameplay Engineering", "Open World", "Systems"],
     },
@@ -56,9 +99,23 @@ const CONTENT = {
       company: "High Moon Studios",
       role:    "Gameplay Engineer",
       year:    "2022 - 2023",
-      bullets: [
-        "Add a key highlight here.",
-        "Add another highlight here.",
+      sections: [
+        {
+          title: "Section Title",
+          bullets: [
+            "Add a key highlight here.",
+            "Add another highlight here.",
+          ],
+          image: null,
+        },
+        {
+          title: "Section Title",
+          bullets: [
+            "Add a key highlight here.",
+            "Add another highlight here.",
+          ],
+          image: null,
+        },
       ],
       tags: ["Gameplay Engineering"],
     },

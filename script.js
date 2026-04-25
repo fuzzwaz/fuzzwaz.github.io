@@ -36,9 +36,29 @@ function renderContent() {
               <button class="exp-toggle" aria-expanded="false" aria-label="Toggle details">▾</button>
             </div>
           </div>
-          <ul class="exp-details">
-            ${job.bullets.map(b => `<li>${bold(b)}</li>`).join('')}
-          </ul>
+          <div class="exp-details">
+            ${job.sections
+              ? job.sections.map(s => `
+                  <div class="exp-section">
+                    <div class="exp-section-head">
+                      <span class="exp-section-title">${s.title}</span>
+                    </div>
+                    <div class="exp-section-body">
+                      <ul>
+                        ${s.bullets.map(b => `<li>${bold(b)}</li>`).join('')}
+                      </ul>
+                      <div class="exp-section-image">
+                        ${s.image
+                          ? `<img src="${s.image}" alt="${s.title}" />`
+                          : `<span>image coming soon</span>`
+                        }
+                      </div>
+                    </div>
+                  </div>
+                `).join('')
+              : `<ul>${job.bullets.map(b => `<li>${bold(b)}</li>`).join('')}</ul>`
+            }
+          </div>
           <div class="exp-tags">
             ${job.tags.map(t => `<span>${t}</span>`).join('')}
           </div>
@@ -47,7 +67,8 @@ function renderContent() {
     `).join('');
 
   document.querySelectorAll('.experience-card').forEach(card => {
-    card.addEventListener('click', () => {
+    card.addEventListener('click', e => {
+      if (e.target.closest('.exp-section-image')) return;
       const expanded = card.classList.toggle('expanded');
       card.querySelector('.exp-toggle').setAttribute('aria-expanded', expanded);
     });
@@ -100,6 +121,32 @@ navLinks.querySelectorAll('a').forEach(link => {
     navLinks.classList.remove('open');
     toggle.setAttribute('aria-expanded', 'false');
   });
+});
+
+// ── Lightbox ──────────────────────────────────────────────
+const lightbox    = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+
+document.addEventListener('click', e => {
+  const img = e.target.closest('.exp-section-image img');
+  if (img) {
+    e.stopPropagation();
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    lightbox.classList.add('open');
+    return;
+  }
+  if (lightbox.classList.contains('open')) {
+    lightbox.classList.remove('open');
+    lightboxImg.src = '';
+  }
+});
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    lightbox.classList.remove('open');
+    lightboxImg.src = '';
+  }
 });
 
 // ── Run ───────────────────────────────────────────────────
