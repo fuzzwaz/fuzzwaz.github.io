@@ -560,6 +560,10 @@ section {
   align-items: start;
 }
 
+.exp-section-body.no-image {
+  grid-template-columns: 1fr;
+}
+
 .exp-section-body ul {
   display: flex;
   flex-direction: column;

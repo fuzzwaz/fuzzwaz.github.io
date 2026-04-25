@@ -43,16 +43,14 @@ function renderContent() {
                     <div class="exp-section-head">
                       <span class="exp-section-title">${s.title}</span>
                     </div>
-                    <div class="exp-section-body">
+                    <div class="exp-section-body${s.image ? '' : ' no-image'}">
                       <ul>
                         ${s.bullets.map(b => `<li>${bold(b)}</li>`).join('')}
                       </ul>
+                      ${s.image ? `
                       <div class="exp-section-image">
-                        ${s.image
-                          ? `<img src="${s.image}" alt="${s.title}" />`
-                          : `<span>image coming soon</span>`
-                        }
-                      </div>
+                        <img src="${s.image}" alt="${s.title}" />
+                      </div>` : ''}
                     </div>
                   </div>
                 `).join('')

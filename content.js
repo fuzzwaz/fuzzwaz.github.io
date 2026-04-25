@@ -101,20 +101,12 @@ const CONTENT = {
       year:    "2022 - 2023",
       sections: [
         {
-          title: "Section Title",
+          title: "Gameplay Engineering",
           bullets: [
-            "Add a key highlight here.",
-            "Add another highlight here.",
+            "Introduced a new animation feature to the Call of Duty engine allowing **client-side animations to notify the server** when significant frames had occurred.",
+            "Improved the usability of the **Spotter Scope**, a piece of equipment utilized across multiple campaign levels.",
+            "Fixed bugs related to grenades, perks, weapons, and UI.",
           ],
-          image: null,
-        },
-        {
-          title: "Section Title",
-          bullets: [
-            "Add a key highlight here.",
-            "Add another highlight here.",
-          ],
-          image: null,
         },
       ],
       tags: ["Gameplay Engineering"],
