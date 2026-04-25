@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../style.css" />
 </head>
-<body>
+<body data-slug="advanced-directed-study">
 
   <nav id="navbar">
     <div class="nav-inner">
@@ -19,7 +19,7 @@
         <li><a href="../index.html#experience">Experience</a></li>
         <li><a href="../index.html#projects">Projects</a></li>
         <li><a href="../index.html#contact">Contact</a></li>
-        <li><a href="YOUR_RESUME_LINK_HERE" class="nav-resume" target="_blank" rel="noopener">Resume</a></li>
+        <li><a href="#" class="nav-resume" target="_blank" rel="noopener">Resume</a></li>
       </ul>
       <button class="nav-toggle" aria-label="Toggle navigation menu">
         <span></span><span></span><span></span>
@@ -30,75 +30,28 @@
   <section class="project-hero">
     <div class="container">
       <a href="../index.html#projects" class="back-link">← Back to Projects</a>
-      <h1 class="proj-hero-title">Advanced Directed Study</h1>
-      <div class="project-tags">
-        <span>Unreal Engine</span><span>Prototyping</span><span>Systems</span><span>Technical Design</span>
-      </div>
+      <h1 id="proj-title" class="proj-hero-title"></h1>
+      <div id="proj-tags" class="project-tags"></div>
     </div>
   </section>
 
   <section class="project-body">
     <div class="container proj-layout">
 
-      <div class="proj-main">
-
-        <div class="proj-section">
-          <h2>Overview</h2>
-          <p>
-            A collection of Unreal Engine demonstrations produced during an advanced independent study.
-            Each piece in the collection targeted a specific engine feature, gameplay system, or technical
-            design concept — treated as focused explorations rather than full shipped games.
-          </p>
-          <p>
-            The study was an opportunity to go deep on Unreal Engine's toolset and apply it to a
-            range of technical design problems.
-          </p>
-          <!-- Add context: what institution, who it was supervised by, what the overall theme was -->
-        </div>
-
-        <div class="proj-section">
-          <h2>Demonstrations</h2>
-          <ul>
-            <li><!-- Demonstration 1 title and brief description --></li>
-            <li><!-- Demonstration 2 title and brief description --></li>
-            <li><!-- Demonstration 3 title and brief description --></li>
-            <!-- Add all demonstrations here -->
-          </ul>
-        </div>
-
-        <div class="proj-section">
-          <h2>Media</h2>
-          <div class="media-grid">
-            <div class="media-item">screenshot / gif</div>
-            <div class="media-item">screenshot / gif</div>
-            <div class="media-item">screenshot / gif</div>
-          </div>
-        </div>
-
-      </div>
+      <div id="proj-main" class="proj-main"></div>
 
       <aside class="proj-sidebar">
-        <div class="sidebar-block">
+        <div id="sidebar-tech" class="sidebar-block">
           <h3>Tech</h3>
-          <ul>
-            <li>Unreal Engine</li>
-            <li>Blueprints</li>
-            <li>C++</li>
-          </ul>
+          <ul></ul>
         </div>
-        <div class="sidebar-block">
+        <div id="sidebar-type" class="sidebar-block">
           <h3>Type</h3>
-          <ul>
-            <li>Academic Project</li>
-            <li>Technical Design</li>
-          </ul>
+          <ul></ul>
         </div>
-        <div class="sidebar-block">
+        <div id="sidebar-links" class="sidebar-block">
           <h3>Links</h3>
-          <ul>
-            <li><a href="YOUR_YOUTUBE_LINK" target="_blank" rel="noopener">YouTube Demo</a></li>
-            <li><a href="YOUR_GITHUB_LINK" target="_blank" rel="noopener">GitHub</a></li>
-          </ul>
+          <ul></ul>
         </div>
       </aside>
 
@@ -110,6 +63,9 @@
     <p class="footer-sub">Hosted on GitHub Pages</p>
   </footer>
 
+  <script src="../content.js"></script>
   <script src="../script.js"></script>
+  <script src="projects-content.js"></script>
+  <script src="project-script.js"></script>
 </body>
 </html>

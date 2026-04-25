@@ -4,6 +4,7 @@ function bold(str) {
 }
 
 function renderContent() {
+  if (!document.getElementById('hero-name')) return;
   const c = CONTENT;
 
   // ── Hero ──────────────────────────────────────────────────

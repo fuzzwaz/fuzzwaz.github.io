@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fuzzy2D & Particle Shooter — Ramy Fawaz</title>
+  <title>Fuzzy2D &amp; Particle Shooter — Ramy Fawaz</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../style.css" />
 </head>
-<body>
+<body data-slug="fuzzy2d">
 
   <nav id="navbar">
     <div class="nav-inner">
@@ -19,7 +19,7 @@
         <li><a href="../index.html#experience">Experience</a></li>
         <li><a href="../index.html#projects">Projects</a></li>
         <li><a href="../index.html#contact">Contact</a></li>
-        <li><a href="YOUR_RESUME_LINK_HERE" class="nav-resume" target="_blank" rel="noopener">Resume</a></li>
+        <li><a href="#" class="nav-resume" target="_blank" rel="noopener">Resume</a></li>
       </ul>
       <button class="nav-toggle" aria-label="Toggle navigation menu">
         <span></span><span></span><span></span>
@@ -30,78 +30,28 @@
   <section class="project-hero">
     <div class="container">
       <a href="../index.html#projects" class="back-link">← Back to Projects</a>
-      <h1 class="proj-hero-title">Fuzzy2D &amp; Particle Shooter</h1>
-      <div class="project-tags">
-        <span>C++</span><span>Custom Engine</span><span>2D</span><span>Particle Systems</span>
-      </div>
+      <h1 id="proj-title" class="proj-hero-title"></h1>
+      <div id="proj-tags" class="project-tags"></div>
     </div>
   </section>
 
   <section class="project-body">
     <div class="container proj-layout">
 
-      <div class="proj-main">
-
-        <div class="proj-section">
-          <h2>Overview</h2>
-          <p>
-            Fuzzy2D is a custom 2D game engine built entirely from scratch in C++. The goal was to
-            understand game engine fundamentals at a low level — rendering, input handling, game loops,
-            and entity management — by building each system without relying on an existing engine or framework.
-          </p>
-          <p>
-            On top of Fuzzy2D, a classic shoot-'em-up (shmup) was built to validate the engine and
-            showcase its particle system capabilities. The particle shooter served as both a stress test
-            and a playable demo.
-          </p>
-          <!-- Add more detail about your specific technical decisions, challenges, and solutions -->
-        </div>
-
-        <div class="proj-section">
-          <h2>Key Features</h2>
-          <ul>
-            <li>Custom C++ 2D rendering pipeline</li>
-            <li>Entity component architecture</li>
-            <li>Particle system with configurable emitters</li>
-            <li>Fixed-timestep game loop</li>
-            <li>Input handling system</li>
-            <!-- Add more features here -->
-          </ul>
-        </div>
-
-        <div class="proj-section">
-          <h2>Media</h2>
-          <div class="media-grid">
-            <div class="media-item">screenshot / gif</div>
-            <div class="media-item">screenshot / gif</div>
-          </div>
-          <!-- Replace placeholders with: <img src="../images/fuzzy2d-1.png" alt="..." /> -->
-        </div>
-
-      </div>
+      <div id="proj-main" class="proj-main"></div>
 
       <aside class="proj-sidebar">
-        <div class="sidebar-block">
+        <div id="sidebar-tech" class="sidebar-block">
           <h3>Tech</h3>
-          <ul>
-            <li>C++</li>
-            <li>Custom Engine (Fuzzy2D)</li>
-            <!-- Add libraries/tools used -->
-          </ul>
+          <ul></ul>
         </div>
-        <div class="sidebar-block">
+        <div id="sidebar-type" class="sidebar-block">
           <h3>Type</h3>
-          <ul>
-            <li>Personal Project</li>
-            <li>Engine Programming</li>
-          </ul>
+          <ul></ul>
         </div>
-        <div class="sidebar-block">
+        <div id="sidebar-links" class="sidebar-block">
           <h3>Links</h3>
-          <ul>
-            <li><a href="YOUR_YOUTUBE_LINK" target="_blank" rel="noopener">YouTube Demo</a></li>
-            <li><a href="YOUR_GITHUB_LINK" target="_blank" rel="noopener">GitHub</a></li>
-          </ul>
+          <ul></ul>
         </div>
       </aside>
 
@@ -113,6 +63,9 @@
     <p class="footer-sub">Hosted on GitHub Pages</p>
   </footer>
 
+  <script src="../content.js"></script>
   <script src="../script.js"></script>
+  <script src="projects-content.js"></script>
+  <script src="project-script.js"></script>
 </body>
 </html>

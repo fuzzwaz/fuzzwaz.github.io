@@ -23,16 +23,18 @@ He works on the Call of Duty franchise. This is his personal portfolio site.
 
 ```
 fuzzwaz.github.io/
-├── index.html          — page structure only, no inline content
-├── content.js          — ALL editable text lives here (edit this, not index.html)
-├── script.js           — reads content.js and populates the DOM
-├── style.css           — all styles
-├── CNAME               — contains "ramyfawaz.com" for custom domain
+├── index.html              — page structure only, no inline content
+├── content.js              — editable text for the main page (hero, experience, projects, links)
+├── script.js               — reads content.js and populates index.html
+├── style.css               — all styles
+├── CNAME                   — contains "ramyfawaz.com" for custom domain
 ├── images/
 │   ├── bo7-keyart.jpg
 │   ├── bo6-keyart.jpg
 │   └── mw3-keyart.jpg
 └── projects/
+    ├── projects-content.js — ALL editable text for project detail pages (edit this)
+    ├── project-script.js   — reads projects-content.js and populates each project page
     ├── fuzzy2d.html
     ├── rift-shot.html
     ├── link-to-the-past.html
@@ -45,12 +47,22 @@ fuzzwaz.github.io/
 
 ## How to edit content
 
-**All site text lives in `content.js`.** Edit that file and push — never touch `index.html` for text changes.
+**Main page text lives in `content.js`.** Edit that file and push — never touch `index.html` for text changes.
+
+**Project detail page text lives in `projects/projects-content.js`.** Edit that file and push — never touch the individual project HTML files for text changes.
 
 - Use `**text**` to make something bold in paragraphs and bullets
-- To add a new experience entry, copy an existing block in the `experience` array
-- To add a new project, copy an existing block in the `projects` array
-- Images go in the `images/` folder and are referenced by path in `content.js`
+- To add a new experience entry, copy an existing block in the `experience` array in `content.js`
+- To add a new project, copy an existing block in the `projects` array in `content.js`, then add a matching entry in `projects-content.js` and a new HTML file in `projects/`
+- Images go in the `images/` folder and are referenced by path
+
+### Project page media items (in `projects-content.js`)
+Each section can have a `media` array. Three item types:
+```js
+{ type: "image",   src: "../images/my-file.jpg", alt: "description" }
+{ type: "youtube", videoId: "XXXXXXXXXXX" }   // 11-char YouTube video ID only
+{ type: "placeholder" }                        // shows a "coming soon" box
+```
 
 ### Pushing changes
 Ramy prefers to be **asked before every push** — never push without explicit confirmation.
