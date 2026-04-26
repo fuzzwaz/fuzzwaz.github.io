@@ -20,6 +20,7 @@ const CONTENT = {
       company: "High Moon Studios",
       role:    "Senior Technical Designer",
       year:    "2025 - 2026",
+      glitchColors: ['#bf00ff', '#7b00ff', '#9d4edd', '#4b0082', '#1a001a', '#2d002d', '#ff6600'],
       sections: [
         {
           title: "Section Title",
@@ -46,6 +47,7 @@ const CONTENT = {
       company: "High Moon Studios",
       role:    "Senior Gameplay Engineer / Technical Designer",
       year:    "2024 - 2025",
+      glitchColors: ['#ff6600', '#ff4500', '#ff8c00', '#cc4400', '#1a0a00', '#2a1000', '#0d0800'],
       sections: [
         {
           title: "Section Title",
@@ -72,6 +74,7 @@ const CONTENT = {
       company: "High Moon Studios",
       role:    "Senior Gameplay Engineer",
       year:    "2023 - 2024",
+      glitchColors: ['#ff0000', '#cc0000', '#990000', '#ff3333', '#660000', '#1a0000', '#2a0000'],
       sections: [
         {
           title: "MWZ / Campaign",
@@ -99,6 +102,7 @@ const CONTENT = {
       company: "High Moon Studios",
       role:    "Gameplay Engineer",
       year:    "2022 - 2023",
+      glitchColors: ['#00ff41', '#00cc33', '#009922', '#33ff66', '#006600', '#001a00', '#002200'],
       sections: [
         {
           title: "Gameplay Engineering",

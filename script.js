@@ -64,9 +64,13 @@ function renderContent() {
       </div>
     `).join('');
 
-  document.querySelectorAll('.experience-card').forEach(card => {
+  document.querySelectorAll('.experience-card').forEach((card, i) => {
+    const palette = c.experience[i].glitchColors || GLITCH_COLORS;
+    card.addEventListener('mouseenter', () => { activeGlitchColors = palette; });
+    card.addEventListener('mouseleave', () => { activeGlitchColors = GLITCH_COLORS; });
     card.addEventListener('click', e => {
       if (e.target.closest('.exp-section-image')) return;
+      burstGlitch(e.clientX, e.clientY);
       const expanded = card.classList.toggle('expanded');
       card.querySelector('.exp-toggle').setAttribute('aria-expanded', expanded);
     });
@@ -119,6 +123,92 @@ navLinks.querySelectorAll('a').forEach(link => {
     navLinks.classList.remove('open');
     toggle.setAttribute('aria-expanded', 'false');
   });
+});
+
+// ── Cursor glitch trail ───────────────────────────────────
+const GLITCH_EXCLUDED = 'a, button, img, video, iframe, nav, footer, ' +
+  '.project-card, .exp-section-image, ' +
+  '.proj-sidebar, .sidebar-block, .media-item, input, textarea';
+
+const GLITCH_COLORS  = ['#2563eb', '#60efff', '#ff2d78', '#ffee00', '#00ff9f', '#ffffff', '#a855f7'];
+let   activeGlitchColors = GLITCH_COLORS;
+
+let glitchLastTime = 0;
+let glitchLastX    = 0;
+let glitchLastY    = 0;
+
+const GLITCH_MIN_SPEED = 0.3; // px/ms — below this, nothing spawns
+const GLITCH_MAX_SPEED = 7;   // px/ms — above this, full effect
+
+function spawnSinglePixel(x, y, speedT, colorOverride) {
+  const el     = document.createElement('div');
+  el.className = 'glitch-pixel';
+  const w      = Math.random() * 5 + 2;
+  const h      = Math.random() * 5 + 2;
+  const color  = colorOverride || activeGlitchColors[Math.floor(Math.random() * activeGlitchColors.length)];
+  const ox     = (Math.random() - 0.5) * 16;
+  const oy     = (Math.random() - 0.5) * 16;
+  const drift  = 10 + speedT * 40;
+  const dx     = (Math.random() - 0.5) * drift;
+  const dy     = (Math.random() - 0.5) * drift;
+  const dur    = Math.random() * 200 + 150;
+  el.style.cssText = `left:${x + ox}px;top:${y + oy}px;width:${w}px;height:${h}px;` +
+    `background:${color};--dx:${dx}px;--dy:${dy}px;animation-duration:${dur}ms;`;
+  document.body.appendChild(el);
+  el.addEventListener('animationend', () => el.remove(), { once: true });
+}
+
+function burstGlitch(x, y) {
+  const count = 18;
+  for (let i = 0; i < count; i++) {
+    const angle = (i / count) * Math.PI * 2 + (Math.random() - 0.5) * 0.4;
+    const dist  = Math.random() * 55 + 25;
+    const el    = document.createElement('div');
+    el.className = 'glitch-pixel glitch-burst';
+    const size  = Math.random() * 5 + 2;
+    const color = activeGlitchColors[Math.floor(Math.random() * activeGlitchColors.length)];
+    const dur   = Math.random() * 180 + 220;
+    el.style.cssText =
+      `left:${x}px;top:${y}px;width:${size}px;height:${size}px;` +
+      `background:${color};--dx:${Math.cos(angle) * dist}px;--dy:${Math.sin(angle) * dist}px;` +
+      `animation-duration:${dur}ms;`;
+    document.body.appendChild(el);
+    el.addEventListener('animationend', () => el.remove(), { once: true });
+  }
+}
+
+function spawnGlitchPixel(x, y, speedT) {
+  if (Math.random() < 0.25) {
+    const spread = 4;
+    const p = activeGlitchColors;
+    spawnSinglePixel(x - spread, y,          speedT, p[Math.floor(Math.random() * p.length)]);
+    spawnSinglePixel(x,          y + spread, speedT, p[Math.floor(Math.random() * p.length)]);
+    spawnSinglePixel(x + spread, y,          speedT, p[Math.floor(Math.random() * p.length)]);
+  } else {
+    spawnSinglePixel(x, y, speedT);
+  }
+}
+
+document.addEventListener('mousemove', e => {
+  if (e.target.closest(GLITCH_EXCLUDED)) return;
+  if (e.target.closest('.experience-card.expanded')) return;
+
+  const now  = Date.now();
+  const dt   = now - glitchLastTime;
+  if (dt < 20) return;
+
+  const dist  = Math.hypot(e.clientX - glitchLastX, e.clientY - glitchLastY);
+  const speed = dist / dt;
+
+  glitchLastTime = now;
+  glitchLastX    = e.clientX;
+  glitchLastY    = e.clientY;
+
+  if (speed < GLITCH_MIN_SPEED) return;
+
+  const t     = Math.min((speed - GLITCH_MIN_SPEED) / (GLITCH_MAX_SPEED - GLITCH_MIN_SPEED), 1);
+  const count = Math.ceil(t * 3);
+  for (let i = 0; i < count; i++) spawnGlitchPixel(e.clientX, e.clientY, t);
 });
 
 // ── Lightbox ──────────────────────────────────────────────
